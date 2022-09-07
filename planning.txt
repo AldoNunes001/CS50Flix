@@ -1,0 +1,21 @@
+1. Homepage
+
+2. Login / Create account (User and Authentication)
+    2.1. Email
+    2.2. Username
+    2.3. Password
+    2.4. Watched videos
+    2.5. Edit profile
+
+3. Courses
+    3.1. Thumb
+    3.2. Title
+    3.3. Description
+    3.4. Category
+    3.5. Number of views
+    3.6. Creation date
+    3.7. Episodes
+        3.7.1. Videos
+        3.7.2. Title
+
+4. Search bar
