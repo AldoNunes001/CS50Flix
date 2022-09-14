@@ -24,7 +24,8 @@ class Course(models.Model):
     views = models.IntegerField(default=0)
     creation_date = models.DateTimeField(default=timezone.now)
 
-
+    def __str__(self):
+        return self.title
 
 # Create week/episode
 
