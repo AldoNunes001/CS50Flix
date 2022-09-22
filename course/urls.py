@@ -2,9 +2,10 @@
 
 from django.contrib import admin
 from django.urls import path, include
-from .views import homepage, homecourses
+from .views import Homepage, Homecourses, Detailscourse
 
 urlpatterns = [
-    path('', homepage),
-    path('courses', homecourses),
+    path('', Homepage.as_view()),
+    path('courses', Homecourses.as_view()),
+    path('courses/<int:pk>', Detailscourse.as_view())  # <int:pk>  <type:primary_key>
 ]
