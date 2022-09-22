@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Courses - CS50Flix
+{% endblock %}
+
+{% block content %}
+    <div class="py-16">
+        <h1>Home Courses</h1>
+        {% for course in course_list %}
+            <hr>
+            <p>{{ course }}</p>
+            <p>{{ course.description }}</p>
+            <img src="{{ course.thumb.url }}">
+        {% endfor %}
+    </div>
+{% endblock %}
