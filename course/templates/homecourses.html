@@ -10,7 +10,9 @@
         <h1>Home Courses</h1>
         {% for course in object_list %}
             <hr>
-            <p>{{ course }}</p>
+            <a href="{% url 'course:detailscourse' course.pk %}">
+                <p>{{ course.title }}</p>
+            </a>
             <p>{{ course.description }}</p>
             <img src="{{ course.thumb.url }}">
         {% endfor %}
