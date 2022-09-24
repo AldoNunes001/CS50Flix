@@ -11,5 +11,12 @@
         <p>{{ object }}</p>
         <p>{{ object.description }}</p>
         <img src="{{ object.thumb.url }}">
+
+        <h2>Lectures:</h2>
+        {% for lecture in object.lectures.all %}
+            <a href="{{ lecture.video }}">
+                <p>{{ forloop.counter }}. {{ lecture.title }}</p>
+            </a>
+        {% endfor %}
     </div>
 {% endblock %}
