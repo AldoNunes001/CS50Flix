@@ -14,8 +14,9 @@
     3.4. Category
     3.5. Number of views
     3.6. Creation date
-    3.7. Episodes
-        3.7.1. Videos
+    3.7. Lectures
+        3.7.1. Videos (youtube link)
         3.7.2. Title
+        3.7.3. Course
 
 4. Search bar

@@ -27,6 +27,16 @@ class Course(models.Model):
     def __str__(self):
         return self.title
 
-# Create week/episode
+
+# Create lecture
+class Lecture(models.Model):
+    # course = models.ManyToManyField()
+    course = models.ForeignKey('Course', related_name='lectures', on_delete=models.CASCADE)
+    title = models.CharField(max_length=100)
+    video = models.URLField()
+
+    def __str__(self):
+        return self.course.title + ' / ' + self.title
+
 
 # Create user
