@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="py-16">
+    <div class="py-10">
         <h1>Home Courses</h1>
         {% for course in object_list %}
             <hr>
@@ -16,5 +16,16 @@
             <p>{{ course.description }}</p>
             <img src="{{ course.thumb.url }}">
         {% endfor %}
+    </div>
+
+    <div class="py-10">
+        <h2>New:</h2>
+        {{ recent_courses }}
+    </div>
+
+
+    <div class="py-10">
+        <h2>Popular:</h2>
+        {{ popular_courses }}
     </div>
 {% endblock %}

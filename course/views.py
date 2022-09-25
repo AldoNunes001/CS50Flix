@@ -29,7 +29,7 @@ class Detailscourse(DetailView):
     def get_context_data(self, **kwargs):
         context = super(Detailscourse, self).get_context_data(**kwargs)
 
-        related_courses = Course.objects.filter(category=self.get_object().category)[0:5]
+        related_courses = Course.objects.filter(category=self.get_object().category)[0:10]
         context['related_courses'] = related_courses
 
         return context

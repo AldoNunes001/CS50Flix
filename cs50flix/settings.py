@@ -63,6 +63,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "course.new_context.recent_courses",
+                "course.new_context.popular_courses",
             ],
         },
     },
