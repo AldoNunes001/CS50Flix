@@ -25,3 +25,12 @@ class Homecourses(ListView):
 class Detailscourse(DetailView):
     template_name = "detailscourse.html"
     model = Course  # object -> 1 item of model
+
+    def get_context_data(self, **kwargs):
+        context = super(Detailscourse, self).get_context_data(**kwargs)
+
+        related_courses = Course.objects.filter(category=self.get_object().category)[0:5]
+        context['related_courses'] = related_courses
+
+        return context
+
