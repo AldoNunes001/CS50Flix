@@ -26,6 +26,14 @@ class Detailscourse(DetailView):
     template_name = "detailscourse.html"
     model = Course  # object -> 1 item of model
 
+    def get(self, request, *args, **kwargs):
+        course = self.get_object()
+        course.views += 1
+        course.save()
+
+        return super().get(request, *args, **kwargs)  # Redirect user to url
+
+
     def get_context_data(self, **kwargs):
         context = super(Detailscourse, self).get_context_data(**kwargs)
 

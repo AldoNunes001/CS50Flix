@@ -1,23 +1,15 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block title %}
-    Courses - CS50Flix
-{% endblock %}
-
-{% block content %}
 
     <main class='bg-primary_black min-h-screen w-full'>
-        <section class="h-screen relative bg-no-repeat pb-8 pl-6 flex  items-end bg-cover" style="background-image: url('{{ object.thumb.url }}');">
+        <section class="h-screen relative bg-no-repeat pb-8 pl-6 flex  items-end bg-cover" style="background-image: url('#');">
             <div>
                 <h2 class="text-6xl font-semibold text-white my-4">
-                    {{ object.title }}
+                    Titulo
                 </h2>
                 <p class=" w-11/12 md:w-5/12 font-medium text-white my-4">
-                    {{ object.description|slice:":100" }}...
+                    Descrição
                 </p>
                 <div class="flex my-4">
-                    <a href="{{ object.lectures.first.video }}">
+                    <a href="#">
                         <button class="flex items-center bg-white py-2 px-5 rounded-md" style='color:black;'>
                             <ion-icon name="play" class="text-2xl"></ion-icon>
                             <span class="ml-3 font-medium">
@@ -27,19 +19,16 @@
                     </a>
                 </div>
             </div>
-        </section>
-
+        </section> 
         <section class='bg-primary_black flex justify-center py-10'>
             <div class="p-8 w-10/12 relative" >
                 <h2 class="text-gray-200 text-3xl font-medium">
-                    Description:
+                    Description
                 </h2>
                 <div class="flex justify-left  items-center min-w-full  movie_lis">
-                    <p class="text-gray-100 text-lg" style="text-align: justify;">
-                        {{ object.description }}
-                        <br>
-                        <br>
-                        Views: {{ object.views }}
+                    <p class="text-gray-100 text-lg">
+                        Descricao
+                        Visualizações:
                     </p>
                 </div>
 
@@ -73,49 +62,7 @@
                 </div>
             </div>
         </section>
-
+        
     </main>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="py-2"></div>
-
-    <div class="py-20">
-        <h1>Detail of: {{ object.title }}</h1>
-        <p>{{ object }}</p>
-        <p>{{ object.description }}</p>
-        <p>Views: {{ object.views }}</p>
-        <img src="{{ object.thumb.url }}">
-
-        <h2>Lectures:</h2>
-        {% for lecture in object.lectures.all %}
-            <a href="{{ lecture.video }}">
-                <p>{{ forloop.counter }}. {{ lecture.title }}</p>
-            </a>
-        {% endfor %}
-    </div>
-
-
-    <div class="py-20">
-        <h2>Related Courses:</h2>
-        {% for course in related_courses %}
-            {% if course.title != object.title %}
-            <a href="{% url 'course:detailscourse' course.pk %}">
-                    <p>{{ course.title }}</p>
-                </a>
-            {% endif %}
-        {% endfor %}
-    </div>
-{% endblock %}
