@@ -65,6 +65,7 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 "course.new_context.recent_courses",
                 "course.new_context.popular_courses",
+                "course.new_context.featured_course"
             ],
         },
     },
