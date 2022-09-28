@@ -42,3 +42,7 @@ class Detailscourse(DetailView):
 
         return context
 
+
+class Searchcourse(ListView):
+    template_name = "searchcourse.html"
+    model = Course

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Search - CS50Flix
+{% endblock %}
+
+{% block content %}
+    <main class='bg-primary_black min-h-screen w-full'>
+        <section class='bg-primary_black  min-h-screen flex justify-center py-12'>
+            <div class="p-8 w-12/12 relative py-12" >
+                <h2 class="text-gray-200 text-2xl font-medium">
+                    Search results:
+                </h2>
+                <div class="flex flex-wrap items-center min-w-full movie_lis">
+                  {% for course in object_list %}
+                    <div class="m-4 bg-blue-500 overflow-hidden flex-shrink-0 rounded-md cursor-pointer h-64 w-96" style="background-color: black;">
+                        <a href="{% url 'course:detailscourse' course.pk %}">
+                            <figure>
+                          <img src="{{ course.thumb.url }}" class="object-cover w-full h-full " style="width: 400px; height: 200px; object-fit: cover;" alt="">
+                          <figcaption style="text-align: center; background-color: black;">{{ course.title }}</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                  {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
