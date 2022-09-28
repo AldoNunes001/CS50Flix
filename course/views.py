@@ -37,7 +37,7 @@ class Detailscourse(DetailView):
     def get_context_data(self, **kwargs):
         context = super(Detailscourse, self).get_context_data(**kwargs)
 
-        related_courses = Course.objects.filter(category=self.get_object().category)[0:10]
+        related_courses = self.model.objects.filter(category=self.get_object().category)[0:10]
         context['related_courses'] = related_courses
 
         return context
@@ -46,3 +46,11 @@ class Detailscourse(DetailView):
 class Searchcourse(ListView):
     template_name = "searchcourse.html"
     model = Course
+
+    def get_queryset(self):
+        search_term = self.request.GET.get('query')
+
+        if search_term:
+            object_list = self.model.objects.filter(title__icontains=search_term)
+
+            return object_list
