@@ -45,7 +45,7 @@
                     <a href="#new2" class="arrow__btn text-6xl page">‹</a>
 
                     {% for course in recent_courses %}
-                        {% if forloop.counter < 5 %}
+                        {% if forloop.counter < 4 %}
                             <div class="item h-64 w-1/4 m-4">
                                 <a href="{% url 'course:detailscourse' course.pk %}">
                                     <img src="{{ course.thumb.url }}" class="rounded-md w-full h-full object-cover">
@@ -57,12 +57,12 @@
                         <a href="#new2" class="arrow__btn text-6xl">›</a>
                   </section>
 
-                  {% if recent_courses|length > 4 %}
+                  {% if recent_courses|length > 3 %}
                       <section id="new2" class="flex flex-nowrap items-center justify-center">
                         <a href="#new1" class="arrow__btn text-6xl">‹</a>
 
                             {% for course in recent_courses %}
-                                {% if forloop.counter > 4 %}
+                                {% if forloop.counter > 3 %}
                                     <div class="item h-64 w-1/4 m-4">
                                         <a href="{% url 'course:detailscourse' course.pk %}">
                                             <img src="{{ course.thumb.url }}" class="rounded-md w-full h-full object-cover">
@@ -89,7 +89,7 @@
                     <a href="#popular2" class="arrow__btn text-6xl page">‹</a>
 
                     {% for course in popular_courses %}
-                        {% if forloop.counter < 5 %}
+                        {% if forloop.counter < 4 %}
                             <div class="item h-64 w-1/4 m-4">
                                 <a href="{% url 'course:detailscourse' course.pk %}">
                                     <img src="{{ course.thumb.url }}" class="rounded-md w-full h-full object-cover">
@@ -101,12 +101,12 @@
                         <a href="#popular2" class="arrow__btn text-6xl">›</a>
                   </section>
 
-                  {% if popular_courses|length > 4 %}
+                  {% if popular_courses|length > 3 %}
                       <section id="popular2" class="flex flex-nowrap items-center justify-center">
                         <a href="#popular1" class="arrow__btn text-6xl">‹</a>
 
                             {% for course in popular_courses %}
-                                {% if forloop.counter > 4 %}
+                                {% if forloop.counter > 3 %}
                                     <div class="item h-64 w-1/4 m-4">
                                         <a href="{% url 'course:detailscourse' course.pk %}">
                                             <img src="{{ course.thumb.url }}" class="rounded-md w-full h-full object-cover">
