@@ -42,4 +42,4 @@ class Lecture(models.Model):
 
 # Create user
 class User(AbstractUser):
-    open_courses = models.ManyToManyField("Course")
+    viewed_courses = models.ManyToManyField("Course")

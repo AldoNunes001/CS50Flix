@@ -2,10 +2,10 @@ from django.contrib import admin
 from .models import Course, Lecture, User
 from django.contrib.auth.admin import UserAdmin
 
-# To appear in the admin the field "open_courses"
+# To appear in the admin the field "viewed_courses"
 fields = list(UserAdmin.fieldsets)
 fields.append(
-                ("History", {"fields": ("open_courses",)})
+                ("History", {"fields": ("viewed_courses",)})
             )
 UserAdmin.fieldsets = tuple(fields)
 

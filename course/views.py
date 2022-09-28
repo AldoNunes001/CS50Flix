@@ -31,6 +31,9 @@ class Detailscourse(DetailView):
         course.views += 1
         course.save()
 
+        user = request.user
+        user.viewed_courses.add(course)
+
         return super().get(request, *args, **kwargs)  # Redirect user to url
 
 
