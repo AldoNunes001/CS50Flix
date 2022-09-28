@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
@@ -40,3 +41,5 @@ class Lecture(models.Model):
 
 
 # Create user
+class User(AbstractUser):
+    open_courses = models.ManyToManyField("Course")

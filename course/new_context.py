@@ -16,6 +16,10 @@ def popular_courses(request):
 
 def featured_course(request):
     courses = Course.objects.all()
-    course = random.choice(courses)
+
+    if courses:
+        course = random.choice(courses)
+    else:
+        course = None
 
     return {"featured_course": course}

@@ -21,6 +21,7 @@
                     {{ featured_course.description|slice:":100" }}...
                 </p>
                 <div class="flex my-4">
+                    {% if featured_course %}
                     <a href="{% url 'course:detailscourse' featured_course.pk %}">
                         <button class="flex items-center bg-white py-2 px-5 rounded-md" style='color:black;'>
                             <ion-icon name="play" class="text-2xl"></ion-icon>
@@ -29,6 +30,7 @@
                             </span>
                         </button>
                     </a>
+                    {% endif %}
                 </div>
             </div>
         </section>
