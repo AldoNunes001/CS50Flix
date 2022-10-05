@@ -66,3 +66,8 @@ class Searchcourse(LoginRequiredMixin, ListView):
             object_list = self.model.objects.filter(title__icontains=search_term)
 
             return object_list
+
+
+class Editprofile(LoginRequiredMixin, TemplateView):
+    template_name = 'editprofile.html'
+
