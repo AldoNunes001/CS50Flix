@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Course
 from django.views.generic import TemplateView, ListView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -7,6 +7,14 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 class Homepage(TemplateView):
     template_name = "homepage.html"
+
+    def get(self, request, *args, **kwargs):
+
+        if request.user.is_authenticated:
+            return redirect('course:homecourses')
+
+        else:
+            return super().get(request, *args, **kwargs)  # Redirect to homepage
 
 # def homepage(request):
 #     return render(request, "homepage.html")
