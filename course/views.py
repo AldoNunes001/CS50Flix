@@ -71,3 +71,7 @@ class Searchcourse(LoginRequiredMixin, ListView):
 class Editprofile(LoginRequiredMixin, TemplateView):
     template_name = 'editprofile.html'
 
+
+class Createaccount(TemplateView):
+    template_name = 'createaccount.html'
+
