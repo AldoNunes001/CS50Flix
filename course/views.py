@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Course
-from django.views.generic import TemplateView, ListView, DetailView
+from .forms import CreateAccountForm
+from django.views.generic import TemplateView, ListView, DetailView, FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
@@ -72,6 +73,7 @@ class Editprofile(LoginRequiredMixin, TemplateView):
     template_name = 'editprofile.html'
 
 
-class Createaccount(TemplateView):
+class Createaccount(FormView):
     template_name = 'createaccount.html'
+    form_class = CreateAccountForm
 
