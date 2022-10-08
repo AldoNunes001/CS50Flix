@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from .models import Course
 from .forms import CreateAccountForm
 from django.views.generic import TemplateView, ListView, DetailView, FormView
@@ -76,4 +76,11 @@ class Editprofile(LoginRequiredMixin, TemplateView):
 class Createaccount(FormView):
     template_name = 'createaccount.html'
     form_class = CreateAccountForm
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse('course:login')
 
