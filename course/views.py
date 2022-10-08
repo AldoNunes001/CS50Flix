@@ -3,6 +3,8 @@ from .models import Course
 from .forms import CreateAccountForm
 from django.views.generic import TemplateView, ListView, DetailView, FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
+from django.contrib.auth import authenticate, login
 
 
 # Create your views here.
@@ -79,8 +81,16 @@ class Createaccount(FormView):
 
     def form_valid(self, form):
         form.save()
+
+        messages.success(self.request, f'Your account was created!')
+
+        username = form.cleaned_data['username']
+        password = form.cleaned_data['password1']
+        new_user = authenticate(username=username, password=password)
+        login(self.request, new_user)
+
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('course:login')
+        return reverse('course:homecourses')
 
