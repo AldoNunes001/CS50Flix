@@ -11,3 +11,6 @@ class CreateAccountForm(UserCreationForm):
         model = User
         fields = ('username', 'email', 'password1', 'password2')
 
+
+class FormHomepage(forms.Form):
+    email = forms.EmailField(label=False)

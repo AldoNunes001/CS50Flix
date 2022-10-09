@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse
-from .models import Course
-from .forms import CreateAccountForm
+from .models import Course, User
+from .forms import CreateAccountForm, FormHomepage
 from django.views.generic import TemplateView, ListView, DetailView, FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
@@ -8,8 +8,9 @@ from django.contrib.auth import authenticate, login
 
 
 # Create your views here.
-class Homepage(TemplateView):
+class Homepage(FormView):
     template_name = "homepage.html"
+    form_class = FormHomepage
 
     def get(self, request, *args, **kwargs):
 
@@ -18,6 +19,15 @@ class Homepage(TemplateView):
 
         else:
             return super().get(request, *args, **kwargs)  # Redirect to homepage
+
+    def get_success_url(self):
+        email = self.request.POST.get('email')
+        user = User.objects.filter(email=email)
+
+        if user:
+            return reverse('course:login')
+        else:
+            return reverse('course:createaccount')
 
 # def homepage(request):
 #     return render(request, "homepage.html")
