@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from .models import Course, User
 from .forms import CreateAccountForm, FormHomepage
-from django.views.generic import TemplateView, ListView, DetailView, FormView
+from django.views.generic import TemplateView, ListView, DetailView, FormView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
@@ -81,8 +81,13 @@ class Searchcourse(LoginRequiredMixin, ListView):
             return object_list
 
 
-class Editprofile(LoginRequiredMixin, TemplateView):
+class Editprofile(LoginRequiredMixin, UpdateView):
     template_name = 'editprofile.html'
+    model = User
+    fields = ['first_name', 'last_name', 'email']
+
+    def get_success_url(self):
+        return reverse('course:homecourses')
 
 
 class Createaccount(FormView):
