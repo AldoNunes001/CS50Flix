@@ -86,6 +86,12 @@ class Editprofile(LoginRequiredMixin, UpdateView):
     model = User
     fields = ['first_name', 'last_name', 'email']
 
+    def get(self, request, *args, **kwargs):
+        if self.request.user.id == self.kwargs['pk']:
+            return super().get(request, *args, **kwargs)
+        else:
+            return redirect('course:homepage')
+
     def get_success_url(self):
         return reverse('course:homecourses')
 
