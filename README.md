@@ -58,6 +58,50 @@ On the edit profile page you can change the name, email and password.
 
 When you click on a course you are redirected to the course page and there you have all the lectures. Clicking on the lecture opens the video player (YouTube) and you can watch the lecture.
 
+All steps:
+1. Site Planning.
+2. Starting the project in Django.
+3. Initial structure.
+4. Creating the first APP.
+5. Creating the superuser and doing the migrations.
+6. Connecting new project APP.
+7. Editing the settings file.
+8. Creating the course template.
+9. Adding the template in the admin.
+10. Configuring static and media folders.
+11. Creating the first page.
+12. Creating website templates and template structure.
+13. Creating the base HTML and connecting the templates.
+14. Creating the navbar and editing the HTML with Tailwind.
+15. Editing the homepage.
+16. Deciding between Function Based Views and Class Based Views.
+17. Passing parameters to html pages with context.
+18. Transforming views into classes.
+19. Creating a view for each course.
+20. Creating dynamic links.
+21. Editing Lecture Model.
+22. Connecting foreign key.
+23. Listing the lectures.
+24. Full screen video player.
+25. Passing custom variables to views and all templates.
+26. Creating context managers.
+27. Creating views counter.
+28. Editing the courses details page.
+29. Editing the courses home page.
+30. Making dynamic edits with JavaScript.
+31. Creating the search field.
+32. Creating custom users.
+33. Creating the list of watched courses.
+34. Registering the movies watched in the database dynamically.
+35. Blocking pages for users who have not logged in.
+36. Customizing the navigation bar for logged in users.
+37. Creating the log out process.
+38. Finalizing log in and log out pages.
+39. Creating account creation page.
+40. Creating dynamic redirection of users.
+41. Creating page to edit profile.
+42. Final adjustments.
+
 There is still a lot to improve, but for me as a programming beginner, having managed to do something like this was already a great accomplishment.
 
 I'm very proud and very happy. And I owe everything to the CS50.
